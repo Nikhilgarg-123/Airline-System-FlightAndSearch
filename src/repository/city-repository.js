@@ -32,7 +32,7 @@ class CityRepository {
         }
     }
 
-    async updateCity(id, name) {
+    async updateCity(id, {name}) {
         try{
             const city = await City.update({ name }, { where: { id: id } });
             return city;
