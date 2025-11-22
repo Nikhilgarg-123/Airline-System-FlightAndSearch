@@ -34,7 +34,9 @@ class CityRepository {
 
     async updateCity(id, {name}) {
         try{
-            const city = await City.update({ name }, { where: { id: id } });
+            const city = await City.findByPk(id);
+            city.name = name;
+            await city.save();
             return city;
         } catch (error) {
             console.log("Something went wrong at repositiory layer")
