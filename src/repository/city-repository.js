@@ -43,4 +43,4 @@ class CityRepository {
     }
 }
 
-module.exports = new CityRepository();
+module.exports = CityRepository;
